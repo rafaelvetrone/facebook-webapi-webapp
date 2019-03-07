@@ -1,0 +1,29 @@
+﻿@model FacebookAPIWebApp.Models.InputPostViewModel
+
+<h2>Copie o access token para enviar um post ao Facebook</h2>
+@using (Html.BeginForm("InputPost", "Post", FormMethod.Post))
+{
+    <div class="">
+        <hr />
+        
+        <div class="">
+            @Html.LabelFor(model => model.AccessToken)
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AccessToken)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Message)
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Message)
+            </div>
+        </div>
+        
+        <div class="">
+            <div class="">
+                <input type="submit" value="Enviar" class="" />
+            </div>
+        </div>
+    </div>
+}

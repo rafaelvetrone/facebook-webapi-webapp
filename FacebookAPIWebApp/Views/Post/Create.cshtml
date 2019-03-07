@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+
+<h2>Copie o access token para gravar os post do usuário no banco de dados</h2>
+@using (Html.BeginForm("CarregarFBAPI", "Post", FormMethod.Get))
+{
+    <p>
+        <label for="accessToken">Access Token</label>
+    </p>
+    <p>
+        <input type="text" id="accessToken" name="accessToken" placeholder="Your access token goes here" size="100" />
+    </p>
+    <p>
+        <input type="submit" value="Enviar" />
+    </p>
+}

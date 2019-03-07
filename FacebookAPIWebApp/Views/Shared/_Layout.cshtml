@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FacebookAPIWebApp</title>
+        
+    <meta name="viewport" content="width=device-width" />
+    <title>Posts</title>
+    @*<script type="text/javascript" async defer src="https://connect.facebook.net/en_US/all.js"></script>*@
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.ui.min.js"></script>
+    @*<script type="text/javascript" src="~/Js/Inicializacao.js"></script>*@
+    <script>
+        function Login() {
+            //FB.login(function (response) {
+            //    if (response.authResponse) {
+            //        console.log('Welcome!  Fetching your information.... ');
+            //        FB.api('/me', function (response) {
+            //            console.log('Good to see you, ' + response.name + '.');
+            //        });
+            //    } else {
+            //        console.log('User cancelled login or did not fully authorize.');
+            //    }
+            //});
+        }
+    </script>
+
+</head>
+<body>
+    <div class="">
+        <div class="">            
+            <div class="">
+                <ul class="">
+                    <li>@Html.ActionLink("Carregar POSTS da API", "Create", "Post")</li>
+                    <li>@Html.ActionLink("Pesquisar POSTS do Mongo DB", "Search", "Post")</li>
+                    <li>@Html.ActionLink("Postar no FB", "InputPost", "Post")</li>
+                    <li><input type="button" value="login no FB" onclick="Login()" /></li>
+                </ul>
+                <p class="">Olá, @User.Identity.Name!</p>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - FacebookAPIWebApp</p>
+        </footer>
+    </div>
+</body>
+</html>

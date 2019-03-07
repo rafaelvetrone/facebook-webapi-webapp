@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+
+<h2>Pesquise posts gravados no banco de dados pela data de criaçao</h2>
+@using (Html.BeginForm("SearchPosts", "Post", FormMethod.Get))
+{
+    <p>
+        <label for="creationDate">Data de Criação</label>
+    </p>
+    <p>
+        <input type="date" id="creationDate" name="creationDate" size="20" />
+    </p>
+    <p>
+        <input type="submit" value="Pesquisar" />
+    </p>
+}

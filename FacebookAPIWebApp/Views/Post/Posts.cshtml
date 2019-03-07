@@ -1,0 +1,61 @@
+﻿@model IEnumerable<FacebookAPIWebApp.Models.PostViewModel>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Posts</title>    
+    <script type="text/javascript" src="~/Js/posts.js"></script>
+</head>
+<body>    
+    <div id="fb-root"></div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Message)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.PermalinkUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedTime)
+            </th>            
+            <th>
+                
+            </th>            
+            <th>
+                
+            </th>            
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.PermalinkUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedTime)
+            </td>
+            <td>
+                @Html.ActionLink("Curtir", "Like", new { id = item.Id})
+                @*<input type="button" value="Curtir" onclick="like('@item.Id')"/>*@
+            </td>
+            <td>
+                @*<input type="button" value="Descurtir" onclick="unlike(@item.Id)" />*@
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
